@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href='https://mdbootstrap.com/docs/b4/jquery/modals/forms/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='https://mdbootstrap.com/docs/b4/jquery/modals/forms/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>TANGO</title>
+  </head>
+  <body>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Style the body */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      
+      /* Header/logo Title */
+      .header {
+        padding: 80px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+      }
+      
+      /* Increase the font size of the heading */
+      .header h1 {
+        font-size: 40px;
+      }
+      
+      /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+      .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+      }
+      
+      /* Style the navigation bar links */
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+      
+      
+      /* Right-aligned link */
+      .navbar a.right {
+        float: right;
+      }
+      
+      /* Change color on hover */
+      .navbar a:hover {
+        background-color: #ffffff;
+        color: black;
+      }
+      
+      /* Active/current link */
+      .navbar a.active {
+        background-color: #666;
+        color: white;
+      }
+      
+      /* Column container */
+      .row {  
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding-right: 40px;
+      }
+      
+      /* Create two unequal columns that sits next to each other */
+      /* Sidebar/left column */
+      .side {
+        -ms-flex: 30%; /* IE10 */
+        flex: 30%;
+        background-color: #5f0e0e00;
+        padding: 40px;
+        width: 100%;
+        text-decoration: #ffffff;
+        padding-left: 4%;
+      }
+      
+      /* Main column */
+      .main {   
+        -ms-flex: 70%; /* IE10 */
+        flex: 70%;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 20px;
+        text-align: center;
+        padding-right: 12px;
+        padding-left: 30px;
+        color: rgb(0, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size-adjust: 0.58;
+      }
+      
+      /* Footer */
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #ffffff;
+        color: #1abc99;
+      }
+      
+      </style>
+  <style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    padding-left: 12px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: rgb(0, 0, 0);
+  }
+  .container{
+    padding-right: 10px;
+    width: 50%;
+  }
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: rgba(255, 255, 255, 0);
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #000000;
+  }
+  
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .row {   
+      flex-direction: column;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 700px) {
+    .navbar a {
+      float: none;
+      width: 100%;
+      display: block;
+    }
+  }
+  </style>
+    <style>
+      .collapsible12 {
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        padding: 18px;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        width: 50%;
+      }
+  .loco{
+  
+  }    
+      .active, .collapsible12:hover {
+        background-color: #555555;
+        width: 100%;
+      }
+      
+      .collapsible12:after {
+        content: '\002B';
+        color: rgba(14, 10, 10, 0.685);
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+      
+      .active:after {
+        content: "\2212";
+      }
+      
+      .content12 {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #f0000000;
+        width: 100%;
+      }
+      body{
+        background:  url('log.jpg')no-repeat center;
+             background-size: cover;
+             height: 100vh;
+      }
+      </style>
+<style>
+  .container-fluid{
+background-color: #1abc9c;
+  }
+.welcome-txt{
+float: right;
+color: white;
+padding-right: 50%;
+}
+  
+</style>  
+<style>
+  .collapsible12 {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible12:hover {
+    background-color: #555;
+    width: 100%;
+  }
+  
+  .collapsible12:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .content12 {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #b4b4b4;
+    width: 100%;
+  }
+  </style>
+
+
+    <nav class="navbar navbar- bg-light">
+      <div class="container-fluid">
+        <img src="logo.png" class="loco" width="70" height="60">
+        <a class="navbar-brand">Navbar</a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="EMAIL" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="PASSWORD"aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">LOGIN</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="side">
+                         
+        <p>PACKAGES</p>
+
+        <button class="collapsible12">Package 1</button>
+        <div class="content12">
+        
+          <div class="w3-container">
+            <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                  <i class="fas fa-envelope prefix grey-text"></i>
+                  <input type="email" id="defaultForm-email" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                </div>
+        
+                <div class="md-form mb-4">
+                  <i class="fas fa-lock prefix grey-text"></i>
+                  <input type="password" id="defaultForm-pass" class="form-control validate">
+                  <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                </div>
+        
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-default">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <p>Text here</p>
+          <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">OPEN FORM</a>
+        <p>Text here</p>
+        </div>
+          </div>
+          </div>
+            
+            
+              <button class="collapsible12">Package 2</button>
+              <div class="content12">
+              
+                <div class="w3-container">
+                  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header text-center">
+                      <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                      <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" id="defaultForm-email" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                      </div>
+              
+                      <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="defaultForm-pass" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                      </div>
+              
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                      <button class="btn btn-default">Login</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <p>Text here</p>
+                <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">OPEN FORM</a>
+              <p>Text here</p>
+              </div>
+                </div>
+                </div>
+            
+                
+            <button class="collapsible12">Package 3</button>
+            <div class="content12">
+            
+              <div class="w3-container">
+                <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                      <i class="fas fa-envelope prefix grey-text"></i>
+                      <input type="email" id="defaultForm-email" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                    </div>
+            
+                    <div class="md-form mb-4">
+                      <i class="fas fa-lock prefix grey-text"></i>
+                      <input type="password" id="defaultForm-pass" class="form-control validate">
+                      <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                    </div>
+            
+                  </div>
+                  <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-default">Login</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="text-center">
+              <p>Text here</p>
+              <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">OPEN FORM</a>
+            <p>Text here</p>
+            </div>
+              </div>
+              </div>
+            
+            <script>
+            var coll = document.getElementsByClassName("collapsible12");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+            
+          </div>
+  <br>
+  <br>
+      <div class="main">
+        <b>
+        <h1><b>WELCOME TO POINT OF SALE</h1>
+       <h2><p><b>Your moves are miscalculated, and underestimating your enemies,your biggest mistake.
+         You will find the will of a single man can be broken.” — Captain Price. </b></p></h2> 
+      
+         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+    </div>
+
+
+    <style>
+      .footer {
+         
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         background-color: rgba(255, 0, 0, 0);
+         color: white;
+         text-align: center;
+      }
+      </style>
+      </head>
+      
+      
+      
+      <div class="footer">
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <br>
+            <br>
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3 text-secondary"></i>CONTACT INFORMATION
+            </h6>
+            <p>TELEPHONE: +267 77 777 777</p>
+            </p> EMAIL: Tango225@gmail.com</p>
+          </div>
+            <br>
+            <br>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                SOCIAL MEDIA
+              </h6>
+              <p>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </p>
+              <p>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </p> 
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                LOCATION
+              </h6>
+              <p>
+                AFGHANISTAN, PRIPYAT
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
